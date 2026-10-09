@@ -1,0 +1,21 @@
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-12;
+  padding: $space-48 $space-16;
+  border: 1px dashed $neutral-light;
+  border-radius: $radius-md;
+  text-align: center;
+}
+
+.title {
+  @include text(h3);
+  color: $primary-medium;
+}
+
+.description {
+  @include text(body-small);
+  max-width: 360px;
+  color: $neutral-extra-dark;
+}

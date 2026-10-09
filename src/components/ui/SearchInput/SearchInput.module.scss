@@ -1,0 +1,81 @@
+// Search — Default: stroke Neutral/Extra-Light · Hover/Selected: stroke Accent 1/Medium
+.search {
+  display: flex;
+  align-items: center;
+  gap: $space-8;
+  width: 100%;
+  border: 1px solid $neutral-extra-light;
+  border-radius: $radius-pill;
+  background-color: $neutral-lightest;
+  transition: border-color $transition;
+
+  &:hover,
+  &:focus-within {
+    border-color: $accent-medium;
+  }
+}
+
+.button {
+  padding: $space-4 $space-4 $space-4 $space-16;
+}
+
+.back {
+  padding: $space-8 $space-12;
+}
+
+.input {
+  @include text(body-small);
+  flex: 1;
+  min-width: 0;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  color: $neutral-extra-dark;
+  caret-color: $accent-medium;
+  outline: none;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $neutral-extra-dark;
+  }
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
+}
+
+.iconBtn {
+  @include reset-button;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  color: $neutral-extra-dark;
+
+  &:first-child {
+    color: $neutral-darkest;
+  }
+}
+
+.searchButton {
+  @include reset-button;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $primary-light;
+  color: $neutral-lightest;
+  transition:
+    background-color $transition,
+    box-shadow $transition;
+
+  &:hover {
+    background-color: $primary-medium;
+    box-shadow: 0 0 0 4px rgba($primary-light, 0.15);
+  }
+}

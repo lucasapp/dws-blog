@@ -1,0 +1,60 @@
+.layout {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+
+  span {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.45;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.blobPink {
+  top: 18%;
+  left: 88%;
+  width: 70vw;
+  height: 70vw;
+  max-width: 720px;
+  max-height: 720px;
+  background: radial-gradient(circle, $secondary-light 0%, transparent 70%);
+}
+
+.blobCyan {
+  top: 50%;
+  left: 4%;
+  width: 70vw;
+  height: 70vw;
+  max-width: 680px;
+  max-height: 680px;
+  background: radial-gradient(circle, $accent-light 0%, transparent 70%);
+  opacity: 0.35 !important;
+}
+
+.blobBlue {
+  top: 92%;
+  left: 88%;
+  width: 70vw;
+  height: 70vw;
+  max-width: 760px;
+  max-height: 760px;
+  background: radial-gradient(circle, #5d74c4 0%, transparent 70%);
+}
+
+.main {
+  padding-bottom: $space-48;
+
+  @include up(lg) {
+    padding-bottom: $space-64;
+  }
+}

@@ -1,0 +1,54 @@
+.button {
+  @include reset-button;
+  @include text(body-large, $fw-semibold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-8;
+  border-radius: $radius-pill;
+  transition:
+    background-color $transition,
+    border-color $transition,
+    color $transition;
+}
+
+.primary {
+  padding: $space-12 $space-24;
+  background-color: $secondary-medium;
+  color: $neutral-lightest;
+
+  &:hover {
+    background-color: $secondary-dark;
+  }
+}
+
+.secondary {
+  padding: $space-4 $space-16 $space-4 $space-12;
+  border: 1px solid $secondary-medium;
+  color: $secondary-medium;
+  @include text(body-small, $fw-semibold);
+
+  @include up(lg) {
+    padding: $space-8 $space-16 $space-8 $space-12;
+    @include text(body-large, $fw-semibold);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+
+    @include up(lg) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &:hover {
+    border-color: $secondary-dark;
+    color: $secondary-dark;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}

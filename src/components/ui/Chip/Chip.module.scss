@@ -1,0 +1,10 @@
+.chip {
+  @include text(caption);
+  display: inline-flex;
+  align-items: center;
+  padding: $space-8 $space-12;
+  border-radius: $radius-pill;
+  background-color: $neutral-extra-light;
+  color: $neutral-extra-dark;
+  white-space: nowrap;
+}

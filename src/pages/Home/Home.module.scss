@@ -1,0 +1,68 @@
+.page {
+    @include container;
+    padding-top: $space-16;
+
+    @include up(lg) {
+        padding-top: $space-40;
+    }
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    gap: $space-16;
+    margin-bottom: $space-16;
+
+    @include up(lg) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: $space-32;
+    }
+}
+
+.title {
+    @include text(h2);
+    color: $primary-medium;
+
+    @media (max-width: 1023px) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+    }
+}
+
+.mobileToolbar {
+    display: flex;
+    align-items: center;
+    gap: $space-8;
+}
+
+.sortMobile {
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.content {
+    @include grid;
+    row-gap: $space-24;
+    align-items: start;
+}
+
+.sidebar {
+    grid-column: 1 / -1;
+
+    @include up(lg) {
+        grid-column: span 3;
+    }
+}
+
+.posts {
+    grid-column: 1 / -1;
+
+    @include up(lg) {
+        grid-column: span 9;
+    }
+}

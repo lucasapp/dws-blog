@@ -1,0 +1,35 @@
+// Filter item — Body/Small/400, stroke 1px
+.wrapper {
+  & + & {
+    margin-top: $space-4;
+  }
+}
+
+.item {
+  @include reset-button;
+  @include text(body-small);
+  display: block;
+  width: 100%;
+  padding: $space-12 $space-8;
+  border: 1px solid transparent;
+  border-bottom-color: $neutral-extra-light;
+  border-radius: 0;
+  color: $neutral-darkest;
+  text-align: left;
+  transition:
+    color $transition,
+    background-color $transition,
+    border-color $transition;
+
+  &:hover {
+    color: $accent-dark;
+  }
+}
+
+.selected {
+  border-color: $accent-dark;
+  border-radius: $radius-sm;
+  background-color: $accent-light-5;
+  color: $accent-dark;
+  font-weight: $fw-semibold;
+}

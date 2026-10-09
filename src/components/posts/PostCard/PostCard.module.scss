@@ -1,0 +1,117 @@
+.card {
+  height: 100%;
+  border-radius: $radius-md;
+  background-color: $neutral-lightest;
+  box-shadow: $shadow-sm;
+  overflow: hidden;
+  transition:
+    box-shadow $transition,
+    transform $transition;
+
+  &:not(.skeleton):hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+
+    .title {
+      color: $secondary-medium;
+    }
+
+    img {
+      transform: scale(1.03);
+    }
+  }
+
+  &:focus-within {
+    @include focus-ring;
+  }
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.media {
+  height: 196px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: $radius-md $radius-md 0 0;
+  background-color: $neutral-extra-light;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 300ms ease;
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+  flex: 1;
+  padding: $space-16;
+}
+
+.meta {
+  @include text(caption);
+  display: flex;
+  align-items: center;
+  gap: $space-8;
+  color: $neutral-extra-dark;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: $secondary-medium;
+}
+
+.title {
+  @include text(h3);
+  @include line-clamp(2);
+  color: $primary-medium;
+  transition: color $transition;
+}
+
+.excerpt {
+  @include text(body-small);
+  @include line-clamp(2);
+  color: $neutral-extra-dark;
+}
+
+.tags {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-8;
+  margin-top: auto;
+  padding-top: $space-8;
+}
+
+// ---------- Skeleton ----------
+.skeleton .media,
+.line {
+  background: linear-gradient(90deg, $neutral-extra-light 25%, $neutral-lightest 50%, $neutral-extra-light 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+}
+
+.line {
+  display: block;
+  height: 12px;
+  border-radius: $radius-xs;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
